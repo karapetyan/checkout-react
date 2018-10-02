@@ -1,0 +1,39 @@
+.steps-container {
+    display: none;
+}
+
+@media (min-width: 550px) {
+    .steps-container {
+        display: block;
+    }
+}
+
+.progress_active {
+    animation: underline 2s forwards;
+    font-weight: bold;
+}
+
+.progress {
+    display: inline-block;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.2);
+    vertical-align: bottom;
+}
+
+.progress:not(:first-child) {
+    margin-left: -4px;
+}
+
+@keyframes underline {
+    50% {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    100% { 
+        border-bottom: 1px solid rgba(0, 0, 0, 1);
+        color: rgba(0, 0, 0, 1);
+    }
+}
