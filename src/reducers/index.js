@@ -35,8 +35,8 @@ const initialState = {
         }
     ],
     paymentFees: {
-        serviceFee: 1,
-        vat: 18
+        serviceFee: null,
+        vat: null
     },
     cartItems: [
         {

@@ -5,7 +5,8 @@ class CheckoutContentPaymentSelection extends React.Component {
         super(props);
         this.state = {
             payPal: {
-                ...this.props.defaultFee
+                vat: 18,
+                serviceFee: 1
             },
             visa: {
                 vat: 0,
@@ -16,6 +17,10 @@ class CheckoutContentPaymentSelection extends React.Component {
                 serviceFee: 0
             }
         }
+
+        this.props.updateFee(
+            this.state.payPal      //defaultPaymentOption
+        )
     }
 
     render() {
@@ -27,7 +32,7 @@ class CheckoutContentPaymentSelection extends React.Component {
               </div>
               <form className="payment">
                       <label className="payment__option" onClick={ () => updateFee(this.state.payPal) } >
-                          <input type="radio" id="r1" name="payment-system" value="paypal" defaultChecked/>
+                          <input type="radio" id="r1" name="payment-system" value="paypal" defaultChecked />
                           <span className="payment__checkmark"></span>
                           <div className="payment__icon-option paypal-back"></div>
                       </label> 
